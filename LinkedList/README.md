@@ -24,3 +24,6 @@ merge - Combine the splitted array in sorted manner.
 
 ### printList(list)
 Prints all the node in the list
+
+### size()
+Returns the size of list.
