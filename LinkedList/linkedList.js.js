@@ -186,6 +186,17 @@ class linkedList{
         }
         else prevNode.next = null;
     }
+
+    size(nodes){
+        if(nodes==null) return 0;
+        let count = 1;
+        while(nodes.next!=null){
+            count++;
+            nodes = nodes.next;
+        }
+        return count;
+    }
+
 }
 
 let nodes1 = new linkedList();
@@ -214,6 +225,8 @@ console.log("after Merge & Sort");
 sortedList.head = nodes1.merge_Sort(nodes1.head, nodes2.head);
 sortedList.printList(sortedList.head);
 console.log("--------------------------");
+
+console.log("Size of Linked List", sortedList.size(sortedList.head))
 
 arr.forEach(data => {
     sortedList.removeFrom(data); 
