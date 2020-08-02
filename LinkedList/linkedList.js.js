@@ -166,6 +166,19 @@ class linkedList{
         }
         return sorted.head;
     }
+
+    reverse(){
+        let node = this.head;
+        if(node.next==null || !node) return;
+        let prev = null, nextNode = node, currNode = node;
+        while(currNode){
+            nextNode = currNode.next;
+            currNode.next = prev;
+            prev = currNode;
+            currNode = nextNode;
+        }
+        this.head = prev;
+    }
     
     removeFrom(index){
         let prevNode;
@@ -235,4 +248,8 @@ arr.forEach(data => {
     console.log("--------------------------");
 });
 
+sortedList.printList(sortedList.head);
+
+console.log("Reversing The List");
+sortedList.reverse();
 sortedList.printList(sortedList.head);
